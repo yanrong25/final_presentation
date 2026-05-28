@@ -1,0 +1,165 @@
+.home {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.home-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.home-header h1 {
+  font-size: 36px;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.subtitle {
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.refresh-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.last-updated {
+  color: var(--text-dim);
+  font-size: 14px;
+}
+
+.refresh-btn {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.refresh-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.refresh-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.refresh-error {
+  color: var(--down);
+  font-size: 14px;
+}
+
+.status {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-dim);
+}
+
+.status.error {
+  color: var(--down);
+}
+
+.search-wrap {
+  margin-bottom: 16px;
+}
+
+.coin-table {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.coin-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 180px 140px;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+
+.coin-row:last-child {
+  border-bottom: none;
+}
+
+.coin-row:not(.coin-row-head):hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.coin-row-head {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-dim);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.col-rank {
+  color: var(--text-dim);
+}
+
+.col-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.coin-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.coin-name-text {
+  font-weight: 600;
+}
+
+.coin-symbol {
+  color: var(--text-dim);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.col-price {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.col-change {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  font-weight: 600;
+}
+
+.col-change.up {
+  color: var(--up);
+}
+
+.col-change.down {
+  color: var(--down);
+}
+
+@media (max-width: 640px) {
+  .coin-row {
+    grid-template-columns: 36px 1fr 100px;
+    padding: 12px 14px;
+    gap: 8px;
+  }
+  .col-change {
+    display: none;
+  }
+  .coin-symbol {
+    display: none;
+  }
+}
