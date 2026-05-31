@@ -43,9 +43,8 @@ function HomePage() {
 
   useEffect(() => {
     fetchCoins()
-    // 自動更新先關掉，避免被 API 速率限制
-    // const timer = setInterval(fetchCoins, REFRESH_INTERVAL)
-    // return () => clearInterval(timer)
+     const timer = setInterval(fetchCoins, REFRESH_INTERVAL)
+     return () => clearInterval(timer)
   }, [])
 
   if (loading) return <p className="status">載入中...</p>
